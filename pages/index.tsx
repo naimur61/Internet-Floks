@@ -11,7 +11,7 @@ export default function Home() {
 	return (
 		<Box sx={{ maxWidth: "1440px", mx: "auto" }}>
 			<Header />
-			{/* <About /> */}
+			<About />
 		</Box>
 	);
 }

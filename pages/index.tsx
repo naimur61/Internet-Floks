@@ -4,14 +4,14 @@ import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import { Button } from "@chakra-ui/react";
 import { Box } from "@chakra-ui/react";
+import Header from "./components/Header";
+import About from "./components/About";
 
 export default function Home() {
 	return (
-		<>
-			<h1>hello</h1>
-			<Button colorScheme="red" size="sm">
-				Red
-			</Button>{" "}
-		</>
+		<Box sx={{ maxWidth: "1440px", mx: "auto" }}>
+			<Header />
+			{/* <About /> */}
+		</Box>
 	);
 }

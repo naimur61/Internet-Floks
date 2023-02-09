@@ -34,15 +34,15 @@ const Banner = () => {
 			</Box>
 			<Button
 				colorScheme="white"
-				size="xs"
+				variant="outline"
+				size="sm"
+				color="white"
+				rounded="full"
 				sx={{
 					position: "absolute",
 					zIndex: "3",
 					right: "20px",
 					top: "20px",
-					p: "15px",
-					border: "2px solid white",
-					rounded: 20,
 				}}
 			>
 				{" "}

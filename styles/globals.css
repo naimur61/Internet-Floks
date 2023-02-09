@@ -35,13 +35,3 @@ a {
 ::-webkit-scrollbar-thumb:hover {
 	background: #555;
 }
-
-.header {
-	flex-direction: row;
-}
-
-@media (max-width: 768px) {
-	.header {
-		flex-direction: column-reverse;
-	}
-}

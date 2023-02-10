@@ -1,5 +1,5 @@
-import { Box, Button, Card, CardBody, color, Stack, Text } from "@chakra-ui/react";
-import React, { useEffect } from "react";
+import { Box, Button, Card, CardBody, color, HStack, Stack, Text } from "@chakra-ui/react";
+import React, { useState } from "react";
 import grile from "../../assets/articels/grilled-tomatoes-1-846x846 1.png";
 import snacks from "../../assets/articels/snakcks.png";
 import post_work from "../../assets/articels/post-workout.png";
@@ -10,6 +10,36 @@ import Image from "next/image";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
 const Articles = () => {
+	const [first, setFirst] = useState(0);
+	const [second, setSecond] = useState(3);
+
+	const nextData = () => {
+		const newF = Math.abs(first + 3);
+		const newS = Math.abs(second + 3);
+		// console.log(newF, newS);
+		if (newF >= jsonApi.length) {
+			setFirst(0);
+			setSecond(3);
+			return;
+		} else {
+			setFirst(newF);
+			setSecond(newS);
+		}
+	};
+	const previousData = () => {
+		const newF = Math.abs(first - 3);
+		const newS = Math.abs(second - 3);
+
+		if (newF >= jsonApi.length) {
+			setFirst(0);
+			setSecond(3);
+			return;
+		} else {
+			setFirst(newF);
+			setSecond(newS);
+		}
+	};
+
 	return (
 		<Box mt={["9.9rem"]} pl="6.2" mb="5rem" mx={["auto", "4rem"]} px="1rem">
 			<Text
@@ -23,7 +53,7 @@ const Articles = () => {
 			</Text>
 
 			<Stack direction={["column", "row"]} justifyContent="space-between" gap={5}>
-				{jsonApi.slice(0, 3).map((data, i) => (
+				{jsonApi.slice(first, second).map((data, i) => (
 					<Card
 						size="sm"
 						p="1.687rem"
@@ -45,14 +75,29 @@ const Articles = () => {
 				))}
 			</Stack>
 
-			<Box mt={["3.6", "4rem"]}>
+			<HStack mt={["3.6", "4rem"]}>
 				<ChevronLeftIcon
-					sx={{ border: " 1px solid #AFAFAF", borderRadius: "5px", color: "#AFAFAF", fontSize: "1.5rem" }}
+					sx={{
+						border: " 1px solid #AFAFAF",
+						borderRadius: "5px",
+						color: "#AFAFAF",
+						fontSize: "1.5rem",
+						cursor: "pointer",
+					}}
+					onClick={previousData}
 				/>
+
 				<ChevronRightIcon
-					sx={{ border: "1px solid #424961", borderRadius: "5px", color: "#424961", fontSize: "1.5rem" }}
+					sx={{
+						border: "1px solid #424961",
+						borderRadius: "5px",
+						color: "#424961",
+						fontSize: "1.5rem",
+						cursor: "pointer",
+					}}
+					onClick={nextData}
 				/>
-			</Box>
+			</HStack>
 		</Box>
 	);
 };

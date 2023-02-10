@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardBody, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Card, CardBody, color, Stack, Text } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import grile from "../../assets/articels/grilled-tomatoes-1-846x846 1.png";
 import snacks from "../../assets/articels/snakcks.png";
@@ -7,6 +7,7 @@ import corn from "../../assets/articels/corn.png";
 import suspense from "../../assets/articels/suprem.png";
 import soup from "../../assets/articels/meal-prep-ideas-846x846 1 (3).png";
 import Image from "next/image";
+import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
 const Articles = () => {
 	return (
@@ -43,6 +44,15 @@ const Articles = () => {
 					</Card>
 				))}
 			</Stack>
+
+			<Box mt={["3.6", "4rem"]}>
+				<ChevronLeftIcon
+					sx={{ border: " 1px solid #AFAFAF", borderRadius: "5px", color: "#AFAFAF", fontSize: "1.5rem" }}
+				/>
+				<ChevronRightIcon
+					sx={{ border: "1px solid #424961", borderRadius: "5px", color: "#424961", fontSize: "1.5rem" }}
+				/>
+			</Box>
 		</Box>
 	);
 };

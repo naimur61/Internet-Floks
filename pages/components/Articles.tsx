@@ -13,31 +13,9 @@ const Articles = () => {
 	const [first, setFirst] = useState(0);
 	const [second, setSecond] = useState(3);
 
-	const nextData = () => {
-		const newF = Math.abs(first + 3);
-		const newS = Math.abs(second + 3);
-		// console.log(newF, newS);
-		if (newF >= jsonApi.length) {
-			setFirst(0);
-			setSecond(3);
-			return;
-		} else {
-			setFirst(newF);
-			setSecond(newS);
-		}
-	};
-	const previousData = () => {
-		const newF = Math.abs(first - 3);
-		const newS = Math.abs(second - 3);
-
-		if (newF >= jsonApi.length) {
-			setFirst(0);
-			setSecond(3);
-			return;
-		} else {
-			setFirst(newF);
-			setSecond(newS);
-		}
+	const setNumber = (f: number, s: number) => {
+		setFirst(f);
+		setSecond(s);
 	};
 
 	return (
@@ -75,28 +53,38 @@ const Articles = () => {
 				))}
 			</Stack>
 
-			<HStack mt={["3.6", "4rem"]}>
-				<ChevronLeftIcon
-					sx={{
-						border: " 1px solid #AFAFAF",
-						borderRadius: "5px",
-						color: "#AFAFAF",
-						fontSize: "1.5rem",
-						cursor: "pointer",
-					}}
-					onClick={previousData}
-				/>
+			<HStack mt={["3.6", "4rem"]} alignItems="center" justifyContent="center">
+				<Button
+					size="xs"
+					variant="outline"
+					color="#424961"
+					colorScheme="#424961"
+					onClick={() => setNumber(0, 3)}
+					px={0}
+					isDisabled={first == 0 ? true : false}
+				>
+					<ChevronLeftIcon fontSize="1.2rem" />
+				</Button>
 
-				<ChevronRightIcon
-					sx={{
-						border: "1px solid #424961",
-						borderRadius: "5px",
-						color: "#424961",
-						fontSize: "1.5rem",
-						cursor: "pointer",
-					}}
-					onClick={nextData}
-				/>
+				<Text onClick={() => setNumber(0, 3)} fontWeight="bold" cursor="pointer">
+					1
+				</Text>
+				<Text fontWeight="bold">/</Text>
+				<Text onClick={() => setNumber(3, 6)} fontWeight="bold" cursor="pointer">
+					2
+				</Text>
+
+				<Button
+					size="xs"
+					variant="outline"
+					color="#424961"
+					colorScheme="#424961"
+					onClick={() => setNumber(3, 6)}
+					px={0}
+					isDisabled={second == jsonApi.length ? true : false}
+				>
+					<ChevronRightIcon fontSize="1.2rem" />
+				</Button>
 			</HStack>
 		</Box>
 	);

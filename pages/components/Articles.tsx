@@ -53,7 +53,7 @@ const Articles = () => {
 				))}
 			</Stack>
 
-			<HStack mt={["3.6", "4rem"]} alignItems="center" justifyContent="center">
+			<HStack mt="4rem" alignItems="center" justifyContent="center">
 				<Button
 					size="xs"
 					variant="outline"

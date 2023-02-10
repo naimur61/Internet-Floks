@@ -7,13 +7,15 @@ import { Box } from "@chakra-ui/react";
 import Header from "./components/Header";
 import About from "./components/About";
 import Articles from "./components/Articles";
+import Footer from "./components/Footer";
 
 export default function Home() {
 	return (
 		<Box sx={{ maxWidth: "1440px", mx: "auto" }}>
 			<Header />
 			<About />
-			<Articles articles={[]} />
+			<Articles />
+			<Footer />
 		</Box>
 	);
 }

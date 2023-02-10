@@ -13,7 +13,7 @@ export default function Home() {
 		<Box sx={{ maxWidth: "1440px", mx: "auto" }}>
 			<Header />
 			<About />
-			<Articles />
+			<Articles articles={[]} />
 		</Box>
 	);
 }

@@ -1,4 +1,4 @@
-import { Box, Card, CardBody, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Card, CardBody, Stack, Text } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import grile from "../../assets/articels/grilled-tomatoes-1-846x846 1.png";
 import snacks from "../../assets/articels/snakcks.png";
@@ -10,18 +10,35 @@ import Image from "next/image";
 
 const Articles = () => {
 	return (
-		<Box mt={["9.9rem"]} pl="6.2">
-			<Text fontSize="3.9rem" fontWeight="extrabold" color="#0E2368">
+		<Box mt={["9.9rem"]} pl="6.2" mb="5rem" mx={["auto", "4rem"]} px="1rem">
+			<Text
+				fontSize={["1.7rem", "3.9rem"]}
+				fontWeight="extrabold"
+				color="#0E2368"
+				textAlign={["center", "left"]}
+				mb={["1.4rem", "2.562rem"]}
+			>
 				Latest Articles{" "}
 			</Text>
 
-			<Stack direction={["column", "row"]}>
-				{jsonApi.map((data, i) => (
-					<Card size="sm" p={27} key={i}>
+			<Stack direction={["column", "row"]} justifyContent="space-between" gap={5}>
+				{jsonApi.slice(0, 3).map((data, i) => (
+					<Card
+						size="sm"
+						p="1.687rem"
+						key={i}
+						width="23.812rem"
+						height="34.625rem"
+						variant="outline"
+						rounded="1.312rem"
+					>
 						<Image src={data?.img} alt="" width={326} height={257} />
-						<CardBody>
+						<CardBody mt="2.125rem">
 							<Text>{data?.head}</Text>
 							<Text>{data?.body}</Text>
+							<Button variant="outline" rounded="full" mt="1.687rem" color="#424961" colorScheme="#424961">
+								Read More
+							</Button>
 						</CardBody>
 					</Card>
 				))}

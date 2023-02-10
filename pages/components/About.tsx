@@ -16,7 +16,7 @@ const About = () => {
 					<Image src={about} alt="" width={384} height={512} />
 				</Box>
 
-				<Box width={["17rem", "28rem"]} height="8.6rem" mx={["auto", 0]} textAlign={["center", "left"]}>
+				<Box width={["17rem", "28rem"]} mx={["auto", 0]} textAlign={["center", "left"]}>
 					<Text fontSize="3.9rem" fontWeight="extrabold" color="#0E2368">
 						About Us
 					</Text>

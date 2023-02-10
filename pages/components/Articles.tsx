@@ -30,14 +30,20 @@ const Articles = () => {
 				Latest Articles{" "}
 			</Text>
 
-			<Stack direction={["column", "row"]} justifyContent="space-between" gap={5}>
+			<Stack
+				direction={["column", "row"]}
+				justifyContent="space-between"
+				alignContent="center"
+				alignItems="center"
+				gap={5}
+			>
 				{jsonApi.slice(first, second).map((data, i) => (
 					<Card
 						size="sm"
 						p="1.687rem"
 						key={i}
-						width="23.812rem"
-						height="34.625rem"
+						width={["16.937rem", "23.812rem"]}
+						height={["30.187rem", "34.625rem"]}
 						variant="outline"
 						rounded="1.312rem"
 					>

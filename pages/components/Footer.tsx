@@ -12,9 +12,8 @@ const Footer = () => {
 			gap={5}
 			direction={["column", "row"]}
 			justifyContent="space-between"
-			alignItems={["start", "center"]}
-			mb="3rem"
-			mx="3rem"
+			py="3rem"
+			px="3rem"
 			bg="#E5E5E5"
 		>
 			<Box width="10.062rem" height="7.812rem" mx={["auto", 0]}>
@@ -68,7 +67,7 @@ const Footer = () => {
 						<FaFacebookF />
 					</HStack>
 				</Box>
-				<Text fontSize="0.915rem" color="#828B9C">
+				<Text fontSize="0.915rem" color="#828B9C" textAlign="center">
 					© 2022 Food Truck Example
 				</Text>
 			</Stack>

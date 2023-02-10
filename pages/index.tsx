@@ -11,11 +11,16 @@ import Footer from "./components/Footer";
 
 export default function Home() {
 	return (
-		<Box sx={{ maxWidth: "1440px", mx: "auto" }}>
-			<Header />
-			<About />
-			<Articles />
-			<Footer />
-		</Box>
+		<div>
+			<Head>
+				<title>Food Truck</title>
+			</Head>
+			<Box sx={{ maxWidth: "1440px", mx: "auto" }}>
+				<Header />
+				<About />
+				<Articles />
+				<Footer />
+			</Box>
+		</div>
 	);
 }

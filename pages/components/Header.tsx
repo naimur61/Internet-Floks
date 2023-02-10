@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import Banner from "./Banner";
 import logo from "../../assets/home/Screenshot_669 1.png";
+import dynamic from "next/dynamic";
 
 const Header = () => {
 	return (
@@ -32,4 +33,4 @@ const Header = () => {
 	);
 };
 
-export default Header;
+export default dynamic(() => Promise.resolve(Header), { ssr: false });

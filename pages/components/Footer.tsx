@@ -15,6 +15,7 @@ const Footer = () => {
 			alignItems={["start", "center"]}
 			mb="3rem"
 			mx="3rem"
+			bg="#E5E5E5"
 		>
 			<Box width="10.062rem" height="7.812rem" mx={["auto", 0]}>
 				<Image src={logo} alt="" />
